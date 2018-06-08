@@ -223,11 +223,16 @@
                 <div class="col-md-8">
                     <p>
                       
-                        需求：将某Varchar类型字段显示为YYYY-MM-DD HH:MM:SS并根据另一个字段动态显示日期 月份加1操作,最后结 
-​           果显示为2018-0x-01 00:00:00
-思路：1.将表中字段类型varchar转换为Date格式,function为to_date
-​            2.通过function为ADD_MONTHS实现月份+1操作
-​            3.最后通过to_char转化
+                        需求：
+将某Varchar类型字段显示为YYYY-MM-DD HH:MM:SS并根据另一个字段动态显示日期 月份加1操作,最后结 
+果显示为2018-0x-01 00:00:00
+思路：
+1.将表中字段类型varchar转换为Date格式,function为to_date
+2.通过function为ADD_MONTHS实现月份+1操作
+​3.最后通过to_char转化为字符格式
+​ 4.通过||连接字符串00:00:00
+具体实现：
+s
                       
                     </p>
                     

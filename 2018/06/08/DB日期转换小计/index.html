@@ -187,14 +187,18 @@
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<p>需求：将某Varchar类型字段显示为YYYY-MM-DD HH:MM:SS并根据另一个字段动态显示日期 月份加1操作,最后结 </p>
-<p>​           果显示为2018-0x-01 00:00:00</p>
-<p>思路：1.将表中字段类型varchar转换为Date格式,function为to_date</p>
-<p>​            2.通过function为ADD_MONTHS实现月份+1操作</p>
-<p>​            3.最后通过to_char转化为字符格式</p>
-<p>​            4.通过||连接字符串00:00:00</p>
-<p>具体实现：select indexcalno,to_char(ADD_MONTHS(to_date(indexcalno,’yyyymm’),’1’),’yyyy-mm-dd’)||’ ‘||’00:00:00’ from laagentmonthb;</p>
-<p>总结:要多用function(or方法),理解其参数格式，比较实现同种功能mysql的function(or方法).</p>
+      		<p><strong>需求：</strong></p>
+<p>将某Varchar类型字段显示为YYYY-MM-DD HH:MM:SS并根据另一个字段动态显示日期 月份加1操作,最后结 </p>
+<p>果显示为2018-0x-01 00:00:00</p>
+<p><strong>思路：</strong></p>
+<p>1.将表中字段类型varchar转换为Date格式,function为to_date</p>
+<p>2.通过function为ADD_MONTHS实现月份+1操作</p>
+<p>​3.最后通过to_char转化为字符格式</p>
+<p>​ 4.通过||连接字符串00:00:00</p>
+<p><strong>具体实现：</strong></p>
+<p>select indexcalno,to_char(ADD_MONTHS(to_date(indexcalno,’yyyymm’),’1’),’yyyy-mm-dd’)||’ ‘||’00:00:00’ from laagentmonthb;</p>
+<p><strong>总结:</strong></p>
+<p>要多用function(or方法),理解其参数格式，比较实现同种功能mysql的function(or方法).</p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
