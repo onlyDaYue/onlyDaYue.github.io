@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>New home | Hexo</title>
+  <title>浅谈为什么hashmap效率高 | Hexo</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -173,27 +173,50 @@
         <div class="row col-md-offset-2">
             <div class="col-md-8">
     			<span class="post-meta">
-      <time datetime="2018-05-15T02:27:58.000Z" itemprop="datePublished">
-          2018-05-15
+      <time datetime="2018-06-20T08:55:02.000Z" itemprop="datePublished">
+          2018-06-20
       </time>
     
+    
+    | 
+    <a href='/tags/hashcode-hashtable/'>hashcode hashtable</a>
+    
+    
 </span>
-                <h1>New home</h1>
+                <h1>浅谈为什么hashmap效率高</h1>
             </div>
         </div>
         <div class="col-md-8 col-md-offset-2">
-      		<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><p>Hello, github, this is my first blog post</p>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+      		<p>基于hashmap的内部实现数据结构,可以理解为Entry(数组)+node(链表)</p>
+<p>查询(读取)快:</p>
+<p>public final int hashCode() {</p>
+<pre><code>    return Objects.hashCode(key) ^ Objects.hashCode(value);
+}
+</code></pre><p>根据hashcode(key)来锁定位置,然后获取value，相当于获取index下标,取得其value,类似于list集合中的实现集合类Arraylist实现方式。</p>
+<p>风险：可能会有key值相同的情况,hash冲突,导致线程不安全。</p>
+<p>插入快:</p>
+<p> Node(int hash, K key, V value, Node&lt;K,V&gt; next) {</p>
+<pre><code>    this.hash = hash;
+    this.key = key;
+    this.value = value;
+    this.next = next;
+}
+</code></pre><p>源码中参数中带有Node节点下个节点的引用,插入的时候只需要移动一下指针,指向下一个即可.与linkedlist有着异曲同工之妙.</p>
+<p>总结:虽然比较来看hashmap效率与hashtable较高,但是多线程情况是不安全的。</p>
 
             <div class="clearfix"></div>
             <hr class="nogutter">
         </div>
         <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
     
-    <a class="pull-left" href="/2018/05/15/new-home/" style="float: left;">
-        ← New home
+    <a class="pull-left" href="/2018/06/29/记/" style="float: left;">
+        ← 记
     </a>
     
+    
+    <a class="pull-right" href="/2018/06/15/hello-world/">
+        Hello World →
+    </a>
     
 </nav>
 

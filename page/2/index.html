@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>New home | Hexo</title>
+  <title>Hexo</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -59,7 +59,7 @@
 </head>
 
 <!--
-<body class="post-template">
+<body class="home-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -167,89 +167,149 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      
+      <!-- ============================ Hero Image =========================== -->
+
+<section id="hero" class="scrollme">
+    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                    <div>
+                        
+                        <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
+                        <p></p>
+                        
+                        <h2></h2>
+                        <p>每一个不曾起舞的日子都是对生命的辜负。</p>
+                        
+
+                    </div>
+                </div>
+            </div>
+            <!-- // .col-md-12 -->
+        </div>
+        <div class="herofade beige-dk"></div>
+    </div>
+</section>
+
+<!-- Height spacing helper -->
+<div class="heightblock"></div>
+<!-- // End height spacing helper -->
+
+<!-- ============================ END Hero Image =========================== -->
+<!-- ============================ Content =========================== -->
+
 <section id="intro">
     <div class="container">
-        <div class="row col-md-offset-2">
-            <div class="col-md-8">
-    			<span class="post-meta">
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2018/05/15/GC问题/">GC问题</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-05-15T07:27:13.000Z" itemprop="datePublished">
+          2018-05-15
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                         在java中，当你创建一个对象。javaJVM为其分配内存，调用构造函数并跟踪你使用的对象，当你停止使用一个对象（也就是停止对他的有效引用时），JVM通过垃圾回收器将对象标位释放状态。当垃圾回收器要释放一个对象的内存时，它调用该对象的finalize方法，垃圾回收器以独立的低优先级的方式运行，只是当其他线程挂起等待该内存释放的情况出现时，它才开始运行释放对象的内存。在当你（事实上，你可以调用System.gc()方法强制垃圾回收器来释
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2018/05/15/GC问题/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2018/05/15/new-home/">New home</a></h3>
+                    <span>
+                        <span class="post-meta">
       <time datetime="2018-05-15T02:27:58.000Z" itemprop="datePublished">
           2018-05-15
       </time>
     
 </span>
-                <h1>New home</h1>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        Create a new postHello, github, this is my first blog post ,EMMM
+More info: Writing
+
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2018/05/15/new-home/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
             </div>
         </div>
-        <div class="col-md-8 col-md-offset-2">
-      		<h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><p>Hello, github, this is my first blog post</p>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
+                    <h3><a href="/2018/05/15/my-sister/">New home</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-05-15T02:27:58.000Z" itemprop="datePublished">
+          2018-05-15
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        Create a new postHello, github, this is my first blog post
+More info: Writing
 
-            <div class="clearfix"></div>
-            <hr class="nogutter">
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2018/05/15/my-sister/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
         </div>
-        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
-    
-    <a class="pull-left" href="/2018/05/15/new-home/" style="float: left;">
-        ← New home
-    </a>
-    
-    
-</nav>
-
-        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
-  /**
-   * 搜狐畅言
-   */
-
-  /*
-  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
-
-  window.onload = function () {
-    (function () {
-      var appid = 'cytXXXX';
-      var conf = 'prod_xxxxxxxxxxxxxxxxx';
-      var width = window.innerWidth || document.documentElement.clientWidth;
-      var loadJs = function (d, a, id) {
-        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
-        var b = document.createElement("script");
-        b.setAttribute("type", "text/javascript");
-        b.setAttribute("charset", "UTF-8");
-        b.setAttribute("src", d);
-        if (id) {
-          b.setAttribute("id", id);
-        }
-        if (typeof a === "function") {
-          if (window.attachEvent) {
-            b.onreadystatechange = function () {
-              var e = b.readyState;
-              if (e === "loaded" || e === "complete") {
-                b.onreadystatechange = null;
-                a()
-              }
-            }
-          } else {
-            b.onload = a
-          }
-        }
-        c.appendChild(b)
-      };
-
-      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
-        window.changyan.api.config({
-          appid: appid,
-          conf: conf
-        })
-      });
-    })();
-  }
-  */
-
-</script>
-</div>
+        
+        <nav class="pagination" role="pagination">
+          <a class="pull-left" href="/">← Newer Posts</a>
+          
+        </nav>
     </div>
 </section>
-
+<section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>我已经想好了写什么，这里放不放东西都会显得很和谐。</p>
+        </div>
+    </div>
+</section>
+<!-- ============================ END Content =========================== -->
 
       
 <!-- ============================ Footer =========================== -->
