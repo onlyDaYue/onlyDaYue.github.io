@@ -17,7 +17,7 @@
 <!--<![endif]-->
 
 <head>
-  <title>Archives | Hexo</title>
+  <title>关于hashmap的一些小纠结与个人理解 | Hexo</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -59,7 +59,7 @@
 </head>
 
 <!--
-<body class="home-template">
+<body class="post-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -167,96 +167,101 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p>每一个不曾起舞的日子都是对生命的辜负。</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-
-
-
-
-<section id="services">
+      
+<section id="intro">
     <div class="container">
-        <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="row boxes">
-                    
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2018/05/17/一次编译与到处执行/">一次编译，到处执行</a></h4>
-                            
-                            <p><time datetime="2018-05-17T09:38:09.000Z"><a href="/2018/05/17/一次编译与到处执行/">2018-05-17</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2018/05/15/GC问题/">GC问题</a></h4>
-                            
-                            <p><time datetime="2018-05-15T07:27:13.000Z"><a href="/2018/05/15/GC问题/">2018-05-15</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2018/05/15/new-home/">New home</a></h4>
-                            
-                            <p><time datetime="2018-05-15T02:27:58.000Z"><a href="/2018/05/15/new-home/">2018-05-15</a></time></p>
-                        </div>
-                    
-                        
-                        
-                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
-                            
-                              <h4 class="title"><a href="/2018/05/15/my-sister/">New home</a></h4>
-                            
-                            <p><time datetime="2018-05-15T02:27:58.000Z"><a href="/2018/05/15/my-sister/">2018-05-15</a></time></p>
-                        </div>
-                    
-                </div>
-            </div>    
+        <div class="row col-md-offset-2">
+            <div class="col-md-8">
+    			<span class="post-meta">
+      <time datetime="2018-07-26T02:35:09.000Z" itemprop="datePublished">
+          2018-07-26
+      </time>
+    
+    
+    | 
+    <a href='/tags/多线程下-1-hashcode-2-相同的hashcode如何存储元素-3-resize-闭环问题/'>多线程下 1.hashcode() 2.相同的hashcode如何存储元素 3.resize()闭环问题</a>
+    
+    
+</span>
+                <h1>关于hashmap的一些小纠结与个人理解</h1>
+            </div>
         </div>
-    </div>
-</section> 
+        <div class="col-md-8 col-md-offset-2">
+      		<p>1.hashcode()方法JDK中的体现:</p>
+<p> public native int hashCode();jdk根据对象的地址或者字符串或者数字算出来的int类型的数值</p>
+<p>用法:当元素put进入hashmap中的位置，根据key.hashcode()来锁定插入位置,可能会出现hashcode相同情况(取模法),也就是hash冲突。</p>
+<p>作用：使用hashcode为了提高哈希表（例如 java.util.Hashtable 提供的哈希表）的性能，因为插入新的元素进入集合中，为了判断集合中是否有相同的key，则调用equals（）,进行每个元素相比较，会很耗时,而使用hashcode()则会使效率更高(实现：每个新的map元素都会有key，则会调用key.hashcode(),而在已有集合中的元素的hashcode值已经存在了此集合中的table&lt;存放集合元素的hashcode值&gt;中。)</p>
+<p>2.相同的hashcode值如何存储对象：</p>
+<p>hash冲突的体现：hashcode值相同,hashmap使用拉链式的方式处理hash冲突,第一个键值对A进来，通过计算其key的hash得到的index=0，记做:Entry[0] = A。一会后又进来一个键值对B，通过计算其index也等于0，现在怎么办？HashMap会这样做:<em>B.next = A</em>,Entry[0] = B,如果又进来C,index也等于0,那么<em>C.next = B</em>,Entry[0] = C；这样我们发现index=0的地方其实存取了A,B,C三个键值对,他们通过next这个属性链接在一起。所以疑问不用担心。这里也就体现了为什么hashmap不能key值相同，如果key相同最后插入的元素覆盖前面的value。</p>
+<p>3.resize()扩容导致hashmap闭环问题：</p>
+<p>先写这些，回去再补，有些困，没胃口吃饭。</p>
 
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>我已经想好了写什么，这里放不放东西都会显得很和谐。</p>
+            <div class="clearfix"></div>
+            <hr class="nogutter">
         </div>
+        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
+    
+    
+    <a class="pull-right" href="/2018/07/16/如何更换设备继续写blog/">
+        如何更换设备继续写blog →
+    </a>
+    
+</nav>
+
+        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
+  /**
+   * 搜狐畅言
+   */
+
+  /*
+  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
+
+  window.onload = function () {
+    (function () {
+      var appid = 'cytXXXX';
+      var conf = 'prod_xxxxxxxxxxxxxxxxx';
+      var width = window.innerWidth || document.documentElement.clientWidth;
+      var loadJs = function (d, a, id) {
+        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
+        var b = document.createElement("script");
+        b.setAttribute("type", "text/javascript");
+        b.setAttribute("charset", "UTF-8");
+        b.setAttribute("src", d);
+        if (id) {
+          b.setAttribute("id", id);
+        }
+        if (typeof a === "function") {
+          if (window.attachEvent) {
+            b.onreadystatechange = function () {
+              var e = b.readyState;
+              if (e === "loaded" || e === "complete") {
+                b.onreadystatechange = null;
+                a()
+              }
+            }
+          } else {
+            b.onload = a
+          }
+        }
+        c.appendChild(b)
+      };
+
+      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
+        window.changyan.api.config({
+          appid: appid,
+          conf: conf
+        })
+      });
+    })();
+  }
+  */
+
+</script>
+</div>
     </div>
 </section>
+
+
       
 <!-- ============================ Footer =========================== -->
 

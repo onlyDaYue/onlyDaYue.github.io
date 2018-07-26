@@ -205,6 +205,44 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
+                    <h3><a href="/2018/07/26/关于hashmap的一些小纠结与个人理解/">关于hashmap的一些小纠结与个人理解</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-07-26T02:35:09.000Z" itemprop="datePublished">
+          2018-07-26
+      </time>
+    
+    
+    | 
+    <a href='/tags/多线程下-1-hashcode-2-相同的hashcode如何存储元素-3-resize-闭环问题/'>多线程下 1.hashcode() 2.相同的hashcode如何存储元素 3.resize()闭环问题</a>
+    
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        1.hashcode()方法JDK中的体现:
+ public native int hashCode();jdk根据对象的地址或者字符串或者数字算出来的int类型的数值
+用法:当元素put进入hashmap中的位置，根据key.hashcode()来锁定插入位置,可能会出现hashcode相同情况(取模法),也就是hash冲突。
+作用：使用hashcode为了提高哈希表（例如 java.util.Hashtable 提供的哈希表）的性能
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2018/07/26/关于hashmap的一些小纠结与个人理解/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
                     <h3><a href="/2018/07/16/如何更换设备继续写blog/">如何更换设备继续写blog</a></h3>
                     <span>
                         <span class="post-meta">
@@ -522,36 +560,6 @@ java中线程的生命周期大概可以分为5个过程：
                     
                     <p class="pull-right readMore">
                         <a href="/2018/05/25/关于线程的生命周期/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2018/05/17/一次编译与到处执行/">一次编译，到处执行</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-05-17T09:38:09.000Z" itemprop="datePublished">
-          2018-05-17
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                         1.编译过程：我们通过IDE写出来的后缀为.java文件，通过JAVA编译器编译为.class文件（字节码)2.编译字节码文件：把后缀为.class的字节码文件编译为目标机器代码，执行是由JVM引擎来完成，也就是JAVA的第二次编译。3.到处执行：JAVA提供了各种不同平台上的虚拟机制，所以也就可以实现“到处”,即JVM for windows或者JVM for unix等总结：在由字节码编译为机器语言的时候，真正采用的是“解释”机制
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2018/05/17/一次编译与到处执行/">Read More...</a>
                     </p>
                     
                 </div>
