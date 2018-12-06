@@ -205,6 +205,39 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 opening-statement">
                 <div class="col-md-4">
+                    <h3><a href="/2018/05/25/关于线程的生命周期/">关于线程的生命周期</a></h3>
+                    <span>
+                        <span class="post-meta">
+      <time datetime="2018-05-25T08:43:53.000Z" itemprop="datePublished">
+          2018-05-25
+      </time>
+    
+</span>
+                    </span>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                      
+                        关于线程的生命周期问题
+java中线程的生命周期大概可以分为5个过程：
+1.new ：当通过new关键字创建了Thread类（或者其他子类）的对象
+2.Runnable:   如果thread类调用了start()方法时，那么此线程就会由new状态转化为Runnable状态。此时还没有获取到CPU,处于Runnbale状态的线程，在等待线程调度器为其分配CPU时间，也就是等待时间分片轮转到自己这里；第二种情况就是线程处于Runnable
+                      
+                    </p>
+                    
+                    <p class="pull-right readMore">
+                        <a href="/2018/05/25/关于线程的生命周期/">Read More...</a>
+                    </p>
+                    
+                </div>
+                <div class="clearfix"></div>
+                <hr class="nogutter">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 opening-statement">
+                <div class="col-md-4">
                     <h3><a href="/2018/05/17/一次编译与到处执行/">一次编译，到处执行</a></h3>
                     <span>
                         <span class="post-meta">
