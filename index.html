@@ -259,94 +259,6 @@
 
 
   
-    <article id="post-LJY东三区的故事" class="post-LJY东三区的故事 post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2018/07/14/LJY东三区的故事/">LJY东三区的故事</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2018/07/14/LJY东三区的故事/" data-id="cjpcf33er0000a4tzp799e6pp" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2018/07/14/LJY东三区的故事/">
-    <time datetime="2018-07-14T06:07:33.000Z" class="entry-date">
-        2018-07-14
-    </time>
-</a>
-    
-    
-    </footer>
-</article>
-
-
-
-
-
-
-  
-    <article id="post-日记" class="post-日记 post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2018/07/01/日记/">日记</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2018/07/01/日记/" data-id="cjpcf33fk000fa4tzvum8g9ew" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        <p>我不想修仙了啊，拜拜（无奈摊手的表情。）</p>
-
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2018/07/01/日记/">
-    <time datetime="2018-06-30T17:01:12.000Z" class="entry-date">
-        2018-07-01
-    </time>
-</a>
-    
-    
-  <span class="article-delim">&#8226;</span>
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/no-about/">no about</a></li></ul>
-
-    </footer>
-</article>
-
-
-
-
-
-
-  
     <article id="post-记" class="post-记 post type-post status-publish format-standard hentry">
     <!---->
 
@@ -562,6 +474,98 @@
 
 
   
+    <article id="post-关于线程的生命周期" class="post-关于线程的生命周期 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2018/05/25/关于线程的生命周期/">关于线程的生命周期</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2018/05/25/关于线程的生命周期/" data-id="cjpcf33fi000da4tzu5em1j3o" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>关于线程的生命周期问题</p>
+<p>java中线程的生命周期大概可以分为5个过程：</p>
+<p>1.new ：当通过new关键字创建了Thread类（或者其他子类）的对象</p>
+<p>2.Runnable:   如果thread类调用了start()方法时，那么此线程就会由new状态转化为Runnable状态。此时还没有获取到CPU,处于Runnbale状态的线程，在等待线程调度器为其分配CPU时间，也就是等待时间分片轮转到自己这里；第二种情况就是线程处于Runnable状态时并没有运行完自己的run方法,CPU用完了之后回到Runnable状态;还有一种状态就是blocked状态的线程结束了当前的blocked状态之后重新回到runnbale状态。</p>
+<p>3.Running:   获取到了CPU的Runnable线程。</p>
+<p>4.Blocked:   在Running状态中出现了类似等待，比如调用了sleep()，出现了线程阻塞状态。</p>
+<p>5.Dead:   在Running状态执行完run()后，状态就转化为了Dead。</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2018/05/25/关于线程的生命周期/">
+    <time datetime="2018-05-25T08:43:53.000Z" class="entry-date">
+        2018-05-25
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-一次编译与到处执行" class="post-一次编译与到处执行 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2018/05/17/一次编译与到处执行/">一次编译，到处执行</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2018/05/17/一次编译与到处执行/" data-id="cjpcf33fa0009a4tzekxousoz" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p> 1.编译过程：我们通过IDE写出来的后缀为.java文件，通过JAVA编译器编译为.class文件（字节码)<br>2.编译字节码文件：把后缀为.class的字节码文件编译为目标机器代码，执行是由JVM引擎来完成，也就是JAVA的第二次编译。<br>3.到处执行：JAVA提供了各种不同平台上的虚拟机制，所以也就可以实现“到处”,即JVM for windows或者JVM for unix等<br><img src="C:\Users\Administrator\Desktop\20sd.png" alt="20sd"><br>总结：在由字节码编译为机器语言的时候，真正采用的是“解释”机制，也就是翻译一句，执行一句，不产生真个机器代码的程序，翻译过程如果不出现错误，就一直进行到完毕，否则将在错误处停止执行，但是同一个程序，如果是解释执行的，那么它的运行速度同城比编译为可执行的机器代码的运行速度慢一些。但是，对于JAVA来说，差别并不大，因为JAVA的字节码经过仔细设计，使用的是JIT即时编译方式，编译技术将字节码直接转化为高性能的本地机器码，JIT也就是JVM的一部分，JAVA运行系统在提供JIT的同时仍具有平台独立性，所以“高效而且跨平台”对JAVA来说是兼得的。如果Java程序是“汉语”，那么其字节码就是“国际语言”，只要运行的国际（平台，windows,linux）提供“翻译”，他们就可以把“世界语言”翻译为本地语言。</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2018/05/17/一次编译与到处执行/">
+    <time datetime="2018-05-17T09:38:09.000Z" class="entry-date">
+        2018-05-17
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
   
     <nav id="pagination">
       <nav id="page-nav">
@@ -607,7 +611,7 @@
           </li>
         
           <li>
-            <a href="/2018/07/14/LJY东三区的故事/">LJY东三区的故事</a>
+            <a href="/2018/06/29/记/">记</a>
           </li>
         
       </ul>
@@ -619,7 +623,7 @@
   <aside class="widget">
     <h3 class="widget-title">Tags</h3>
     <div class="widget-content">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/LJY东三区-日常/">LJY东三区.日常</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle-Date-Varchar/">Oracle Date Varchar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-bolg-换设备/">github bolg 换设备</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hashcode-hashtable/">hashcode hashtable</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/no-about/">no about</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多线程下-1-hashcode-2-相同的hashcode如何存储元素-3-resize-闭环问题/">多线程下 1.hashcode() 2.相同的hashcode如何存储元素 3.resize()闭环问题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记-心情-看法/">日记,心情,看法</a><span class="tag-list-count">1</span></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/LJY东三区-日常/">LJY东三区.日常</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle-Date-Varchar/">Oracle Date Varchar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-bolg-换设备/">github bolg 换设备</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hashcode-hashtable/">hashcode hashtable</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多线程下-1-hashcode-2-相同的hashcode如何存储元素-3-resize-闭环问题/">多线程下 1.hashcode() 2.相同的hashcode如何存储元素 3.resize()闭环问题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记-心情-看法/">日记,心情,看法</a><span class="tag-list-count">1</span></li></ul>
     </div>
   </aside>
 
@@ -628,7 +632,7 @@
   <aside class="widget">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget-content tagcloud">
-      <a href="/tags/LJY东三区-日常/" style="font-size: 10px;">LJY东三区.日常</a> <a href="/tags/Oracle-Date-Varchar/" style="font-size: 10px;">Oracle Date Varchar</a> <a href="/tags/github-bolg-换设备/" style="font-size: 10px;">github bolg 换设备</a> <a href="/tags/hashcode-hashtable/" style="font-size: 10px;">hashcode hashtable</a> <a href="/tags/no-about/" style="font-size: 10px;">no about</a> <a href="/tags/多线程下-1-hashcode-2-相同的hashcode如何存储元素-3-resize-闭环问题/" style="font-size: 10px;">多线程下 1.hashcode() 2.相同的hashcode如何存储元素 3.resize()闭环问题</a> <a href="/tags/日记-心情-看法/" style="font-size: 10px;">日记,心情,看法</a>
+      <a href="/tags/LJY东三区-日常/" style="font-size: 10px;">LJY东三区.日常</a> <a href="/tags/Oracle-Date-Varchar/" style="font-size: 10px;">Oracle Date Varchar</a> <a href="/tags/github-bolg-换设备/" style="font-size: 10px;">github bolg 换设备</a> <a href="/tags/hashcode-hashtable/" style="font-size: 10px;">hashcode hashtable</a> <a href="/tags/多线程下-1-hashcode-2-相同的hashcode如何存储元素-3-resize-闭环问题/" style="font-size: 10px;">多线程下 1.hashcode() 2.相同的hashcode如何存储元素 3.resize()闭环问题</a> <a href="/tags/日记-心情-看法/" style="font-size: 10px;">日记,心情,看法</a>
     </div>
   </aside>
 
