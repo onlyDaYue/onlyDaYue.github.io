@@ -1,454 +1,390 @@
 <!DOCTYPE html>
-<!--[if lte IE 8 ]>
-<html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US">
-<![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<!--
-***************  *      *     *
-      8          *    *       *
-      8          *  *         *
-      8          **           *
-      8          *  *         *
-      8          *    *       *
-      8          *      *     *
-      8          *        *   ***********    -----Theme By Kieran(http://go.kieran.top)
--->
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
-<!--<![endif]-->
-
+<html>
 <head>
+  <meta charset="utf-8">
+  
+  
+
+  
+  
+  
+  
+  
+  
   <title>Hexo</title>
-  <!-- Meta data -->
-    <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="Hexo">
-    <meta name="author" content="John Doe">
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-
-    <!-- Favicon, (keep icon in root folder) -->
-    <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
-
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-    <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
-    
-    <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
-    
-
-    <!--[if IE 8]>
-    <link rel="stylesheet" type="text/css" href="/css/ie8.css" />
-    <![endif]-->
-
-    <!-- jQuery | Load our jQuery, with an alternative source fallback to a local version if request is unavailable -->
-    <script src="/js/jquery-1.11.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/jquery-1.11.1.min.js"><\/script>')</script>
-
-    <!-- Load these in the <head> for quicker IE8+ load times -->
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-    <script src="/js/html5shiv.min.js"></script>
-    <script src="/js/respond.min.js"></script>
-    <![endif]-->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
   
   
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
   
 
-  <style>.col-md-8.col-md-offset-2.opening-statement img{display:none;}</style>
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
 </head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Hexo" rel="home">Hexo</a>
+      </h1>
+      
+        <h2 class="site-description hitokoto"></h2>
+        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
+      
+    </hgroup>
 
-<!--
-<body class="home-template">
--->
-<body id="index" class="lightnav animsition">
-
-      <!-- ============================ Off-canvas navigation =========================== -->
-
-    <div class="sb-slidebar sb-right sb-style-overlay sb-momentum-scrolling">
-        <div class="sb-close" aria-label="Close Menu" aria-hidden="true">
-            <img src="/img/close.png" alt="Close"/>
-        </div>
-        <!-- Lists in Slidebars -->
-        <ul class="sb-menu">
-            <li><a href="/" class="animsition-link" title="Home">Home</a></li>
-            <li><a href="/archives" class="animsition-link" title="archive">archives</a></li>
-            <!-- Dropdown Menu -->
-			 
-            <li>
-                <a class="sb-toggle-submenu">Works<span class="sb-caret"></span></a>
-                <ul class="sb-submenu">
-                    
-                        <li><a href="/" target="_BLANK" class="animsition-link">AAA</a></li>
-                    
-                        <li><a href="/atom.xml" target="_BLANK" class="animsition-link">BBB</a></li>
-                    
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
                 </ul>
-            </li>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main">
+  
+    <article id="post-关于线程的生命周期" class="post-关于线程的生命周期 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2018/05/25/关于线程的生命周期/">关于线程的生命周期</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
             
-            
-            
-            <li>
-                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
-                <ul class="sb-submenu">
-                    
-                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
-                    
-                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
-                    
-                </ul>
-            </li>
-            
-        </ul>
-        <!-- Lists in Slidebars -->
-        <ul class="sb-menu secondary">
-            
-            <li><a href="/about.html" class="animsition-link" title="about">About</a></li>
-            <li><a href="/atom.xml" class="animsition-link" title="rss">RSS</a></li>
-        </ul>
-    </div>
-    
-    <!-- ============================ END Off-canvas navigation =========================== -->
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2018/05/25/关于线程的生命周期/" data-id="cjpcf33fi000da4tzu5em1j3o" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
 
-    <!-- ============================ #sb-site Main Page Wrapper =========================== -->
-
-    <div id="sb-site">
-        <!-- #sb-site - All page content should be contained within this id, except the off-canvas navigation itself -->
-
-        <!-- ============================ Header & Logo bar =========================== -->
-
-        <div id="navigation" class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <!-- Nav logo -->
-                    <div class="logo">
-                        <a href="/" title="Logo" class="animsition-link">
-                         <img src="/img/logo.png" alt="Logo" width="35px;"/> 
-                        </a>
-                    </div>
-                    <!-- // Nav logo -->
-                    <!-- Info-bar -->
-                    <nav>
-                        <ul class="nav">
-                            <li><a href="/" class="animsition-link">Hexo</a></li>
-                            <li class="nolink"><span>Always </span>Creative.</li>
-                            
-                            <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
-                            
-                            
-                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
-                            
-                            
-                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
-                            
-                            
-                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
-                            
-                            
-                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
-                            
-                            <li class="nolink"><span>Welcome!</span></li>
-                        </ul>
-                    </nav>
-                    <!--// Info-bar -->
-                </div>
-                <!-- // .container -->
-                <div class="learnmore sb-toggle-right">More</div>
-                <button type="button" class="navbar-toggle menu-icon sb-toggle-right" title="More">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar before"></span>
-                <span class="icon-bar main"></span>
-                <span class="icon-bar after"></span>
-                </button>
-            </div>
-            <!-- // .navbar-inner -->
-        </div>
-
-        <!-- ============================ Header & Logo bar =========================== -->
-
-
-      <!-- ============================ Hero Image =========================== -->
-
-<section id="hero" class="scrollme">
-    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
-        <div class="row">
-            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
-                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
-                    <div>
-                        
-                        <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
-                        <p></p>
-                        
-                        <h2></h2>
-                        <p>每一个不曾起舞的日子都是对生命的辜负。</p>
-                        
-
-                    </div>
-                </div>
-            </div>
-            <!-- // .col-md-12 -->
-        </div>
-        <div class="herofade beige-dk"></div>
-    </div>
-</section>
-
-<!-- Height spacing helper -->
-<div class="heightblock"></div>
-<!-- // End height spacing helper -->
-
-<!-- ============================ END Hero Image =========================== -->
-<!-- ============================ Content =========================== -->
-
-<section id="intro">
-    <div class="container">
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2018/05/25/关于线程的生命周期/">关于线程的生命周期</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-05-25T08:43:53.000Z" itemprop="datePublished">
-          2018-05-25
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        关于线程的生命周期问题
-java中线程的生命周期大概可以分为5个过程：
-1.new ：当通过new关键字创建了Thread类（或者其他子类）的对象
-2.Runnable:   如果thread类调用了start()方法时，那么此线程就会由new状态转化为Runnable状态。此时还没有获取到CPU,处于Runnbale状态的线程，在等待线程调度器为其分配CPU时间，也就是等待时间分片轮转到自己这里；第二种情况就是线程处于Runnable
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2018/05/25/关于线程的生命周期/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2018/05/17/一次编译与到处执行/">一次编译，到处执行</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-05-17T09:38:09.000Z" itemprop="datePublished">
-          2018-05-17
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                         1.编译过程：我们通过IDE写出来的后缀为.java文件，通过JAVA编译器编译为.class文件（字节码)2.编译字节码文件：把后缀为.class的字节码文件编译为目标机器代码，执行是由JVM引擎来完成，也就是JAVA的第二次编译。3.到处执行：JAVA提供了各种不同平台上的虚拟机制，所以也就可以实现“到处”,即JVM for windows或者JVM for unix等总结：在由字节码编译为机器语言的时候，真正采用的是“解释”机制
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2018/05/17/一次编译与到处执行/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2018/05/15/GC问题/">GC问题</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-05-15T07:27:13.000Z" itemprop="datePublished">
-          2018-05-15
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                         在java中，当你创建一个对象。javaJVM为其分配内存，调用构造函数并跟踪你使用的对象，当你停止使用一个对象（也就是停止对他的有效引用时），JVM通过垃圾回收器将对象标位释放状态。当垃圾回收器要释放一个对象的内存时，它调用该对象的finalize方法，垃圾回收器以独立的低优先级的方式运行，只是当其他线程挂起等待该内存释放的情况出现时，它才开始运行释放对象的内存。在当你（事实上，你可以调用System.gc()方法强制垃圾回收器来释
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2018/05/15/GC问题/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2018/05/15/new-home/">New home</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-05-15T02:27:58.000Z" itemprop="datePublished">
-          2018-05-15
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        Create a new postHello, github, this is my first blog post ,EMMM
-More info: Writing
-
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2018/05/15/new-home/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2 opening-statement">
-                <div class="col-md-4">
-                    <h3><a href="/2018/05/15/my-sister/">New home</a></h3>
-                    <span>
-                        <span class="post-meta">
-      <time datetime="2018-05-15T02:27:58.000Z" itemprop="datePublished">
-          2018-05-15
-      </time>
-    
-</span>
-                    </span>
-                </div>
-                <div class="col-md-8">
-                    <p>
-                      
-                        Create a new postHello, github, this is my first blog post
-More info: Writing
-
-                      
-                    </p>
-                    
-                    <p class="pull-right readMore">
-                        <a href="/2018/05/15/my-sister/">Read More...</a>
-                    </p>
-                    
-                </div>
-                <div class="clearfix"></div>
-                <hr class="nogutter">
-            </div>
-        </div>
-        
-        <nav class="pagination" role="pagination">
-          <a class="pull-left" href="/">← Newer Posts</a>
-          
-        </nav>
-    </div>
-</section>
-<section id="statement">
-    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
-        <div class="row">
-            <p>我已经想好了写什么，这里放不放东西都会显得很和谐。</p>
-        </div>
-    </div>
-</section>
-<!-- ============================ END Content =========================== -->
+    <div class="entry-content">
+      
+        <p>关于线程的生命周期问题</p>
+<p>java中线程的生命周期大概可以分为5个过程：</p>
+<p>1.new ：当通过new关键字创建了Thread类（或者其他子类）的对象</p>
+<p>2.Runnable:   如果thread类调用了start()方法时，那么此线程就会由new状态转化为Runnable状态。此时还没有获取到CPU,处于Runnbale状态的线程，在等待线程调度器为其分配CPU时间，也就是等待时间分片轮转到自己这里；第二种情况就是线程处于Runnable状态时并没有运行完自己的run方法,CPU用完了之后回到Runnable状态;还有一种状态就是blocked状态的线程结束了当前的blocked状态之后重新回到runnbale状态。</p>
+<p>3.Running:   获取到了CPU的Runnable线程。</p>
+<p>4.Blocked:   在Running状态中出现了类似等待，比如调用了sleep()，出现了线程阻塞状态。</p>
+<p>5.Dead:   在Running状态执行完run()后，状态就转化为了Dead。</p>
 
       
-<!-- ============================ Footer =========================== -->
+    </div><!-- .entry-content -->
 
-<footer>
-    <div class="container">
-            <div class="copy">
-                <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By John Doe. All Rights Reserved.
-                </p>
-                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
-            </div>
-            <div class="social">
-                <ul>
-                    
-                    <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
-                    
-                </ul>
-            </div>
-            <div class="clearfix"> </div>
-        </div>
+    <footer class="entry-meta">
+    <a href="/2018/05/25/关于线程的生命周期/">
+    <time datetime="2018-05-25T08:43:53.000Z" class="entry-date">
+        2018-05-25
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-一次编译与到处执行" class="post-一次编译与到处执行 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2018/05/17/一次编译与到处执行/">一次编译，到处执行</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2018/05/17/一次编译与到处执行/" data-id="cjpcf33fa0009a4tzekxousoz" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p> 1.编译过程：我们通过IDE写出来的后缀为.java文件，通过JAVA编译器编译为.class文件（字节码)<br>2.编译字节码文件：把后缀为.class的字节码文件编译为目标机器代码，执行是由JVM引擎来完成，也就是JAVA的第二次编译。<br>3.到处执行：JAVA提供了各种不同平台上的虚拟机制，所以也就可以实现“到处”,即JVM for windows或者JVM for unix等<br><img src="C:\Users\Administrator\Desktop\20sd.png" alt="20sd"><br>总结：在由字节码编译为机器语言的时候，真正采用的是“解释”机制，也就是翻译一句，执行一句，不产生真个机器代码的程序，翻译过程如果不出现错误，就一直进行到完毕，否则将在错误处停止执行，但是同一个程序，如果是解释执行的，那么它的运行速度同城比编译为可执行的机器代码的运行速度慢一些。但是，对于JAVA来说，差别并不大，因为JAVA的字节码经过仔细设计，使用的是JIT即时编译方式，编译技术将字节码直接转化为高性能的本地机器码，JIT也就是JVM的一部分，JAVA运行系统在提供JIT的同时仍具有平台独立性，所以“高效而且跨平台”对JAVA来说是兼得的。如果Java程序是“汉语”，那么其字节码就是“国际语言”，只要运行的国际（平台，windows,linux）提供“翻译”，他们就可以把“世界语言”翻译为本地语言。</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2018/05/17/一次编译与到处执行/">
+    <time datetime="2018-05-17T09:38:09.000Z" class="entry-date">
+        2018-05-17
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-GC问题" class="post-GC问题 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2018/05/15/GC问题/">GC问题</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2018/05/15/GC问题/" data-id="cjpcf33f40004a4tzstm6rwid" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p> 在java中，当你创建一个对象。javaJVM为其分配内存，调用构造函数并跟踪你使用的对象，当你停止使用一个对象（也就是停止对他的有效引用时），JVM通过垃圾回收器将对象标位释放状态。当垃圾回收器要释放一个对象的内存时，它调用该对象的finalize方法，垃圾回收器以独立的低优先级的方式运行，只是当其他线程挂起等待该内存释放的情况出现时，它才开始运行释放对象的内存。在当你（事实上，你可以调用System.gc()方法强制垃圾回收器来释放这些对象的内存）在以上的描述中，有一些重要的事情需要注意：首先，只有当垃圾回收器释放该对象的内存时，才会执行finalize方法，如果在Applet或应用程序退出之前垃圾回收器没有释放内存，垃圾回收器将不会调用finalize方法。其次：除非垃圾回收器认为你的Applet或应用程序需要额外的内存，否则它不会试图释放不在使用的对象的内存。换句话说，这是完全可能的，一个Applet给少量的对象分配内存，没有造成严重的内存需求，于是垃圾回收器没有释放这些内存就退出了。显然，如果你为某个对象定义finalize方法，JVM可能不会调用它，因为垃圾回收器不曾释放过那些对象的内存。调用System.gc()也不会起作用，因为它仅仅是给JVM一个建议而不是命令。System.runFinalizersOnExit()方法并不立即试图启动垃圾回收器，而是当应用程序或Applet退出时，它调用每个对象的finalize方法，finalize方法是与java编程中的垃圾回收器有关系。即：当一个对象变成垃圾对象的时候，如果此对象的内存被回收，那么就可以调用系统中定义的finalize方法来完成。当然，java的内存回收可以由JVM来自动完成。system.gc();java语言建立了垃圾收集机制，用以跟踪正在使用的对象和发现并回收不在使用（引用）的对象。该机制可以有效防范动态内存分配中可能发生的两个危险：<br> ①因内存垃圾过多而引发的内存耗尽<br> ②以及不恰当的内存释放所造成的内存非法引用</p>
+<p> 触发主GC的条件：  </p>
+<p> ①当应用程序空闲时，即没有应用线程在运行时，GC会被调用，因为GC在优先级最低的线程在运行，并在运行过程中创建新对象，若这时内存空间不足，JVM就会强制的调用GC线程，以便回收内存用于新的分配。若GC一次之后仍不能满足内存分配的要求，JVM会进行两次GC作进一步的尝试，若仍无法满足要求，则JVM将报“out of memory”的错误，java应用将停止。由于是否进行主GC由JVM根据系统环境决定而系统环境在不断的变化当中，所以主GC的运行具有不确定性，无法预计它何时必然出现，但可以确定的是对一个长期运行的应用来说，其主GC是反复进行的。</p>
+<p> 垃圾收集算法的核心思想是：  </p>
+<p> 对虚拟机可用内存空间，即堆空间中的对象进行识别，如果对象正在被引用，那么称其为存活对象，反之，如果对象不再被引用，则为垃圾对象，可以回收其占据的空间，用于再分配。垃圾收集算法的选择和垃圾收集系统参数的合理调节直接影响着系统的性能，因此需要开发人员有着比较深刻的理解。  </p>
+<p> 堆内存与栈内存：  </p>
+<p> 堆内存实际上指的是优先队列的一种数据结构（自由度大），第一个元素有最高的优先权；栈内存实际上就是满足先进后出的性质的数学或数据结构(自由度小)。  </p>
+<p> end:大学时写的文章。<img src="file:///C:\Users\ADMINI~1\AppData\Local\Temp\SGPicFaceTpBq\4652\25BAD6A5.png" alt="img"></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2018/05/15/GC问题/">
+    <time datetime="2018-05-15T07:27:13.000Z" class="entry-date">
+        2018-05-15
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-new-home" class="post-new-home post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2018/05/15/new-home/">New home</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2018/05/15/new-home/" data-id="cjpcf33f50005a4tz1evgndai" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><p>Hello, github, this is my first blog post ,EMMM</p>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2018/05/15/new-home/">
+    <time datetime="2018-05-15T02:27:58.000Z" class="entry-date">
+        2018-05-15
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
+    <article id="post-my-sister" class="post-my-sister post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2018/05/15/my-sister/">New home</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2018/05/15/my-sister/" data-id="cjpcf33f00002a4tzaj58utjc" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><p>Hello, github, this is my first blog post</p>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2018/05/15/my-sister/">
+    <time datetime="2018-05-15T02:27:58.000Z" class="entry-date">
+        2018-05-15
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
+  
+    <nav id="pagination">
+      <nav id="page-nav">
+        <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+      </nav>
+    </nav>
+  
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/06/失业后第一次面试/">失业后第一次面试</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/26/关于hashmap的一些小纠结与个人理解/">关于hashmap的一些小纠结与个人理解</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/如何更换设备继续写blog/">如何更换设备继续写blog</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/下大雨/">下大雨</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/14/LJY东三区的故事/">LJY东三区的故事</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/LJY东三区-日常/">LJY东三区.日常</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle-Date-Varchar/">Oracle Date Varchar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-bolg-换设备/">github bolg 换设备</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hashcode-hashtable/">hashcode hashtable</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/no-about/">no about</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多线程下-1-hashcode-2-相同的hashcode如何存储元素-3-resize-闭环问题/">多线程下 1.hashcode() 2.相同的hashcode如何存储元素 3.resize()闭环问题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记-心情-看法/">日记,心情,看法</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/LJY东三区-日常/" style="font-size: 10px;">LJY东三区.日常</a> <a href="/tags/Oracle-Date-Varchar/" style="font-size: 10px;">Oracle Date Varchar</a> <a href="/tags/github-bolg-换设备/" style="font-size: 10px;">github bolg 换设备</a> <a href="/tags/hashcode-hashtable/" style="font-size: 10px;">hashcode hashtable</a> <a href="/tags/no-about/" style="font-size: 10px;">no about</a> <a href="/tags/多线程下-1-hashcode-2-相同的hashcode如何存储元素-3-resize-闭环问题/" style="font-size: 10px;">多线程下 1.hashcode() 2.相同的hashcode如何存储元素 3.resize()闭环问题</a> <a href="/tags/日记-心情-看法/" style="font-size: 10px;">日记,心情,看法</a>
+    </div>
+  </aside>
+
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2018 John Doe
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
 </footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
 
-<!-- ============================ END Footer =========================== -->
-      <!-- Load our scripts -->
-<!-- Resizable 'on-demand' full-height hero -->
-<script type="text/javascript">
-    var resizeHero = function () {
-        var hero = $(".cover,.heightblock"),
-            window1 = $(window);
-        hero.css({
-            "height": window1.height()
-        });
-    };
-
-    resizeHero();
-
-    $(window).resize(function () {
-        resizeHero();
-    });
-</script>
-<script src="/js/plugins.min.js"></script><!-- Bootstrap core and concatenated plugins always load here -->
-<script src="/js/scripts.js"></script><!-- Theme scripts -->
+<script src="/js/jquery-3.3.1.min.js"></script>
 
 
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-<script type="text/javascript">
-$('#intro').find('img').each(function(){
-  var alt = this.alt;
-
-  if (alt){
-    $(this).after('<span class="caption" style="display:none">' + alt + '</span>');
-  }
-
-  $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox" rel="gallery" />');
-});
-(function($){
-  $('.fancybox').fancybox();
-})(jQuery);
-</script>
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
+<script src="/js/script.js"></script>
 
-      
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
 </body>
 </html>
