@@ -25,7 +25,7 @@
 <meta property="og:site_name" content="Yue&#39;s blog">
 <meta property="og:description" content="1.hashcode()方法JDK中的体现:  public native int hashCode();jdk根据对象的地址或者字符串或者数字算出来的int类型的数值 用法:当元素put进入hashmap中的位置，根据key.hashcode()来锁定插入位置,可能会出现hashcode相同情况(取模法),也就是hash冲突。 作用：使用hashcode为了提高哈希表（例如 java.util.">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-13T10:14:33.495Z">
+<meta property="og:updated_time" content="2018-12-13T10:16:04.564Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于hashmap的一些小纠结与个人理解">
 <meta name="twitter:description" content="1.hashcode()方法JDK中的体现:  public native int hashCode();jdk根据对象的地址或者字符串或者数字算出来的int类型的数值 用法:当元素put进入hashmap中的位置，根据key.hashcode()来锁定插入位置,可能会出现hashcode相同情况(取模法),也就是hash冲突。 作用：使用hashcode为了提高哈希表（例如 java.util.">
@@ -96,7 +96,7 @@
 <p>作用：使用hashcode为了提高哈希表（例如 java.util.Hashtable 提供的哈希表）的性能，因为插入新的元素进入集合中，为了判断集合中是否有相同的key，则调用equals（）,进行每个元素相比较，会很耗时,而使用hashcode()则会使效率更高(实现：每个新的map元素都会有key，则会调用key.hashcode(),而在已有集合中的元素的hashcode值已经存在了此集合中的table&lt;存放集合元素的hashcode值&gt;中。)</p>
 <p>2.相同的hashcode值如何存储对象：</p>
 <p>hash冲突的体现：hashcode值相同,hashmap使用拉链式的方式处理hash冲突,第一个键值对A进来，通过计算其key的hash得到的index=0，记做:Entry[0] = A。一会后又进来一个键值对B，通过计算其index也等于0，现在怎么办？HashMap会这样做:<em>B.next = A</em>,Entry[0] = B,如果又进来C,index也等于0,那么<em>C.next = B</em>,Entry[0] = C；这样我们发现index=0的地方其实存取了A,B,C三个键值对,他们通过next这个属性链接在一起。所以疑问不用担心。这里也就体现了为什么hashmap不能key值相同，如果key相同最后插入的元素覆盖前面的value。</p>
-<p>3.resize()扩容导致hashmap闭环问题：</p>
+<p>3.resize()扩容导致hashmap闭环问题.</p>
 
       
     </div><!-- .entry-content -->
