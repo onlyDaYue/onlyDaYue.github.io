@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="关于线程的生命周期问题
+java中线程的生命周期大概可以分为5个过程：
+1.new ：当通过new关键字创建了Thread类（或者其他子类）的对象
+2.Runnable:   如果thread类调用了start()方法时，那么此线程就会由new状态转化为Runnable状态。此时还没有获取到CPU," />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>关于线程的生命周期 | Yue&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="关于线程的生命周期问题 java中线程的生命周期大概可以分为5个过程： 1.new ：当通过new关键字创建了Thread类（或者其他子类）的对象 2.Runnable:   如果thread类调用了start()方法时，那么此线程就会由new状态转化为Runnable状态。此时还没有获取到CPU,处于Runnbale状态的线程，在等待线程调度器为其分配CPU时间，也就是等待时间分片轮转到自己这里">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于线程的生命周期">
+<meta property="og:url" content="http://yoursite.com/2018/05/25/关于线程的生命周期/index.html">
+<meta property="og:site_name" content="Yue&#39;s blog">
+<meta property="og:description" content="关于线程的生命周期问题 java中线程的生命周期大概可以分为5个过程： 1.new ：当通过new关键字创建了Thread类（或者其他子类）的对象 2.Runnable:   如果thread类调用了start()方法时，那么此线程就会由new状态转化为Runnable状态。此时还没有获取到CPU,处于Runnbale状态的线程，在等待线程调度器为其分配CPU时间，也就是等待时间分片轮转到自己这里">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-25T08:49:28.122Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于线程的生命周期">
+<meta name="twitter:description" content="关于线程的生命周期问题 java中线程的生命周期大概可以分为5个过程： 1.new ：当通过new关键字创建了Thread类（或者其他子类）的对象 2.Runnable:   如果thread类调用了start()方法时，那么此线程就会由new状态转化为Runnable状态。此时还没有获取到CPU,处于Runnbale状态的线程，在等待线程调度器为其分配CPU时间，也就是等待时间分片轮转到自己这里">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Yue&#39;s blog" rel="home">Yue&#39;s blog</a>
+      </h1>
+      
+        <h2 class="site-description hitokoto"></h2>
+        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-关于线程的生命周期" class="post-关于线程的生命周期 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      关于线程的生命周期
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2018/05/25/关于线程的生命周期/" data-id="cjpcf33fi000da4tzu5em1j3o" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>关于线程的生命周期问题</p>
+<p>java中线程的生命周期大概可以分为5个过程：</p>
+<p>1.new ：当通过new关键字创建了Thread类（或者其他子类）的对象</p>
+<p>2.Runnable:   如果thread类调用了start()方法时，那么此线程就会由new状态转化为Runnable状态。此时还没有获取到CPU,处于Runnbale状态的线程，在等待线程调度器为其分配CPU时间，也就是等待时间分片轮转到自己这里；第二种情况就是线程处于Runnable状态时并没有运行完自己的run方法,CPU用完了之后回到Runnable状态;还有一种状态就是blocked状态的线程结束了当前的blocked状态之后重新回到runnbale状态。</p>
+<p>3.Running:   获取到了CPU的Runnable线程。</p>
+<p>4.Blocked:   在Running状态中出现了类似等待，比如调用了sleep()，出现了线程阻塞状态。</p>
+<p>5.Dead:   在Running状态执行完run()后，状态就转化为了Dead。</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2018/05/25/关于线程的生命周期/">
+    <time datetime="2018-05-25T08:43:53.000Z" class="entry-date">
+        2018-05-25
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2018/06/08/DB日期转换小计/" rel="prev"><span class="meta-nav">←</span> DB日期转换小计</a></span>
+    
+    
+        <span class="nav-next"><a href="/2018/05/17/一次编译与到处执行/" rel="next">一次编译，到处执行 <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/06/失业后第一次面试/">失业后第一次面试</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/26/关于hashmap的一些小纠结与个人理解/">关于hashmap的一些小纠结与个人理解</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/如何更换设备继续写blog/">如何更换设备继续写blog</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/下大雨/">下大雨</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/29/记/">记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/LJY东三区-日常/">LJY东三区.日常</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle-Date-Varchar/">Oracle Date Varchar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-bolg-换设备/">github bolg 换设备</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hashcode-hashtable/">hashcode hashtable</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多线程下-1-hashcode-2-相同的hashcode如何存储元素-3-resize-闭环问题/">多线程下 1.hashcode() 2.相同的hashcode如何存储元素 3.resize()闭环问题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记-心情-看法/">日记,心情,看法</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/LJY东三区-日常/" style="font-size: 10px;">LJY东三区.日常</a> <a href="/tags/Oracle-Date-Varchar/" style="font-size: 10px;">Oracle Date Varchar</a> <a href="/tags/github-bolg-换设备/" style="font-size: 10px;">github bolg 换设备</a> <a href="/tags/hashcode-hashtable/" style="font-size: 10px;">hashcode hashtable</a> <a href="/tags/多线程下-1-hashcode-2-相同的hashcode如何存储元素-3-resize-闭环问题/" style="font-size: 10px;">多线程下 1.hashcode() 2.相同的hashcode如何存储元素 3.resize()闭环问题</a> <a href="/tags/日记-心情-看法/" style="font-size: 10px;">日记,心情,看法</a>
+    </div>
+  </aside>
+
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2018 Yue&#39;s blog
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>

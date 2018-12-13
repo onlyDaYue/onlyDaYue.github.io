@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="1.hashcode()方法JDK中的体现:
+ public native int hashCode();jdk根据对象的地址或者字符串或者数字算出来的int类型的数值
+用法:当元素put进入hashmap中的位置，根据key.hashcode()来锁定插入位置,可能会出现hashcode相同情况(" />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>关于hashmap的一些小纠结与个人理解 | Yue&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1.hashcode()方法JDK中的体现:  public native int hashCode();jdk根据对象的地址或者字符串或者数字算出来的int类型的数值 用法:当元素put进入hashmap中的位置，根据key.hashcode()来锁定插入位置,可能会出现hashcode相同情况(取模法),也就是hash冲突。 作用：使用hashcode为了提高哈希表（例如 java.util.">
+<meta name="keywords" content="多线程下 1.hashcode() 2.相同的hashcode如何存储元素 3.resize()闭环问题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于hashmap的一些小纠结与个人理解">
+<meta property="og:url" content="http://yoursite.com/2018/07/26/关于hashmap的一些小纠结与个人理解/index.html">
+<meta property="og:site_name" content="Yue&#39;s blog">
+<meta property="og:description" content="1.hashcode()方法JDK中的体现:  public native int hashCode();jdk根据对象的地址或者字符串或者数字算出来的int类型的数值 用法:当元素put进入hashmap中的位置，根据key.hashcode()来锁定插入位置,可能会出现hashcode相同情况(取模法),也就是hash冲突。 作用：使用hashcode为了提高哈希表（例如 java.util.">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-13T10:16:04.564Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于hashmap的一些小纠结与个人理解">
+<meta name="twitter:description" content="1.hashcode()方法JDK中的体现:  public native int hashCode();jdk根据对象的地址或者字符串或者数字算出来的int类型的数值 用法:当元素put进入hashmap中的位置，根据key.hashcode()来锁定插入位置,可能会出现hashcode相同情况(取模法),也就是hash冲突。 作用：使用hashcode为了提高哈希表（例如 java.util.">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Yue&#39;s blog" rel="home">Yue&#39;s blog</a>
+      </h1>
+      
+        <h2 class="site-description hitokoto"></h2>
+        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-关于hashmap的一些小纠结与个人理解" class="post-关于hashmap的一些小纠结与个人理解 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      关于hashmap的一些小纠结与个人理解
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2018/07/26/关于hashmap的一些小纠结与个人理解/" data-id="cjpcf33fg000ba4tztuvk33ni" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>1.hashcode()方法JDK中的体现:</p>
+<p> public native int hashCode();jdk根据对象的地址或者字符串或者数字算出来的int类型的数值</p>
+<p>用法:当元素put进入hashmap中的位置，根据key.hashcode()来锁定插入位置,可能会出现hashcode相同情况(取模法),也就是hash冲突。</p>
+<p>作用：使用hashcode为了提高哈希表（例如 java.util.Hashtable 提供的哈希表）的性能，因为插入新的元素进入集合中，为了判断集合中是否有相同的key，则调用equals（）,进行每个元素相比较，会很耗时,而使用hashcode()则会使效率更高(实现：每个新的map元素都会有key，则会调用key.hashcode(),而在已有集合中的元素的hashcode值已经存在了此集合中的table&lt;存放集合元素的hashcode值&gt;中。)</p>
+<p>2.相同的hashcode值如何存储对象：</p>
+<p>hash冲突的体现：hashcode值相同,hashmap使用拉链式的方式处理hash冲突,第一个键值对A进来，通过计算其key的hash得到的index=0，记做:Entry[0] = A。一会后又进来一个键值对B，通过计算其index也等于0，现在怎么办？HashMap会这样做:<em>B.next = A</em>,Entry[0] = B,如果又进来C,index也等于0,那么<em>C.next = B</em>,Entry[0] = C；这样我们发现index=0的地方其实存取了A,B,C三个键值对,他们通过next这个属性链接在一起。所以疑问不用担心。这里也就体现了为什么hashmap不能key值相同，如果key相同最后插入的元素覆盖前面的value。</p>
+<p>3.resize()扩容导致hashmap闭环问题.</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2018/07/26/关于hashmap的一些小纠结与个人理解/">
+    <time datetime="2018-07-26T02:35:09.000Z" class="entry-date">
+        2018-07-26
+    </time>
+</a>
+    
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/多线程下-1-hashcode-2-相同的hashcode如何存储元素-3-resize-闭环问题/">多线程下 1.hashcode() 2.相同的hashcode如何存储元素 3.resize()闭环问题</a></li></ul>
+
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2018/12/06/失业后第一次面试/" rel="prev"><span class="meta-nav">←</span> 失业后第一次面试</a></span>
+    
+    
+        <span class="nav-next"><a href="/2018/07/16/如何更换设备继续写blog/" rel="next">如何更换设备继续写blog <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2018/12/06/失业后第一次面试/">失业后第一次面试</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/26/关于hashmap的一些小纠结与个人理解/">关于hashmap的一些小纠结与个人理解</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/如何更换设备继续写blog/">如何更换设备继续写blog</a>
+          </li>
+        
+          <li>
+            <a href="/2018/07/16/下大雨/">下大雨</a>
+          </li>
+        
+          <li>
+            <a href="/2018/06/29/记/">记</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/LJY东三区-日常/">LJY东三区.日常</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Oracle-Date-Varchar/">Oracle Date Varchar</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-bolg-换设备/">github bolg 换设备</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hashcode-hashtable/">hashcode hashtable</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/多线程下-1-hashcode-2-相同的hashcode如何存储元素-3-resize-闭环问题/">多线程下 1.hashcode() 2.相同的hashcode如何存储元素 3.resize()闭环问题</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/日记-心情-看法/">日记,心情,看法</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/LJY东三区-日常/" style="font-size: 10px;">LJY东三区.日常</a> <a href="/tags/Oracle-Date-Varchar/" style="font-size: 10px;">Oracle Date Varchar</a> <a href="/tags/github-bolg-换设备/" style="font-size: 10px;">github bolg 换设备</a> <a href="/tags/hashcode-hashtable/" style="font-size: 10px;">hashcode hashtable</a> <a href="/tags/多线程下-1-hashcode-2-相同的hashcode如何存储元素-3-resize-闭环问题/" style="font-size: 10px;">多线程下 1.hashcode() 2.相同的hashcode如何存储元素 3.resize()闭环问题</a> <a href="/tags/日记-心情-看法/" style="font-size: 10px;">日记,心情,看法</a>
+    </div>
+  </aside>
+
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2018 Yue&#39;s blog
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
