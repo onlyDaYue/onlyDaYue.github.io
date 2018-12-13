@@ -136,7 +136,6 @@
 <p>2.相同的hashcode值如何存储对象：</p>
 <p>hash冲突的体现：hashcode值相同,hashmap使用拉链式的方式处理hash冲突,第一个键值对A进来，通过计算其key的hash得到的index=0，记做:Entry[0] = A。一会后又进来一个键值对B，通过计算其index也等于0，现在怎么办？HashMap会这样做:<em>B.next = A</em>,Entry[0] = B,如果又进来C,index也等于0,那么<em>C.next = B</em>,Entry[0] = C；这样我们发现index=0的地方其实存取了A,B,C三个键值对,他们通过next这个属性链接在一起。所以疑问不用担心。这里也就体现了为什么hashmap不能key值相同，如果key相同最后插入的元素覆盖前面的value。</p>
 <p>3.resize()扩容导致hashmap闭环问题：</p>
-<p>先写这些，回去再补，有些困，没胃口吃饭。</p>
 
       
     </div><!-- .entry-content -->
