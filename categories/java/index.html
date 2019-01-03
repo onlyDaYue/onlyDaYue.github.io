@@ -17,20 +17,20 @@
 <!--<![endif]-->
 
 <head>
-  <title>一次编译，到处执行 | Hexo</title>
+  <title>Category: java | Yue&#39;s blog</title>
   <!-- Meta data -->
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" >
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="generator" content="Hexo">
-    <meta name="author" content="John Doe">
+    <meta name="generator" content="Yue's blog">
+    <meta name="author" content="">
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 
     <!-- Favicon, (keep icon in root folder) -->
     <link rel="Shortcut Icon" href="/img/favicon.ico" type="image/ico">
 
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Yue&#39;s blog" type="application/atom+xml">
     <link rel="stylesheet" href="/css/all.css" media="screen" type="text/css">
     
     <link rel="stylesheet" href="/highlightjs/vs.css" type="text/css">
@@ -59,7 +59,7 @@
 </head>
 
 <!--
-<body class="post-template">
+<body class="home-template">
 -->
 <body id="index" class="lightnav animsition">
 
@@ -87,17 +87,21 @@
             </li>
             
             
-            
-            <li>
-                <a class="sb-toggle-submenu">Links<span class="sb-caret"></span></a>
-                <ul class="sb-submenu">
-                    
-                    <li><a href="http://go.kieran.top/" class="animsition-link">Kieran</a></li>
-                    
-                    <li><a href="http://domain.com/" class="animsition-link">Name</a></li>
-                    
-                </ul>
-            </li>
+        	<li>
+        		<a class="sb-toggle-submenu">Categories<span class="sb-caret"></span></a>
+            	<ul class="sb-submenu">
+				  	
+				    <li><a href="/categories/DB/" class="animsition-link">DB<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/HEXO/" class="animsition-link">HEXO<small>(1)</small></a></li>
+				    
+				    <li><a href="/categories/java/" class="animsition-link">java<small>(5)</small></a></li>
+				    
+				    <li><a href="/categories/生活/" class="animsition-link">生活<small>(2)</small></a></li>
+				    
+				</ul>
+        	</li>
+			
             
         </ul>
         <!-- Lists in Slidebars -->
@@ -130,22 +134,16 @@
                     <!-- Info-bar -->
                     <nav>
                         <ul class="nav">
-                            <li><a href="/" class="animsition-link">Hexo</a></li>
+                            <li><a href="/" class="animsition-link">Yue's blog</a></li>
                             <li class="nolink"><span>Always </span>Creative.</li>
                             
                             <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a></li>
                             
                             
-                            <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a></li>
                             
                             
-                            <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a></li>
                             
-                            
-                            <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a></li>
-                            
-                            
-                            <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
+                            <li><a href="https://weibo.com/5502178609/profile?rightmod=1&wvr=6&mod=personinfo" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a></li>
                             
                             <li class="nolink"><span>Welcome!</span></li>
                         </ul>
@@ -167,88 +165,108 @@
         <!-- ============================ Header & Logo bar =========================== -->
 
 
-      
-<section id="intro">
-    <div class="container">
-        <div class="row col-md-offset-2">
-            <div class="col-md-8">
-    			<span class="post-meta">
-      <time datetime="2018-05-17T09:38:09.000Z" itemprop="datePublished">
-          2018-05-17
-      </time>
-    
-</span>
-                <h1>一次编译，到处执行</h1>
+      <!-- ============================ Hero Image =========================== -->
+
+<section id="hero" class="scrollme">
+    <div class="container-fluid element-img" style="background: url(/img/bg_img.jpg) no-repeat center center fixed;background-size: cover">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 vertical-align cover boost text-center">
+                <div class="center-me animateme" data-when="exit" data-from="0" data-to="0.6" data-opacity="0" data-translatey="100">
+                    <div>
+                        
+                        <h2>YOU'VE MADE A <span>BRAVE</span> DECISION, WELCOME.</h2>
+                        <p></p>
+                        
+                        <h2></h2>
+                        <p>每一个不曾起舞的日子都是对生命的辜负。</p>
+                        
+
+                    </div>
+                </div>
             </div>
+            <!-- // .col-md-12 -->
         </div>
-        <div class="col-md-8 col-md-offset-2">
-      		
-            <div class="clearfix"></div>
-            <hr class="nogutter">
-        </div>
-        <nav class="m-pagination col-md-8 col-md-offset-2 col-sm-24" role="pagination">
-    
-    
-    <a class="pull-right" href="/2018/05/15/GC问题/">
-        GC问题 →
-    </a>
-    
-</nav>
-
-        <div class="col-md-8 col-md-offset-2 col-sm-24"><script type="text/javascript">
-  /**
-   * 搜狐畅言
-   */
-
-  /*
-  document.write('<div id="SOHUCS" sid="' + window.location.pathname.slice(1) + '" ></div>');
-
-  window.onload = function () {
-    (function () {
-      var appid = 'cytXXXX';
-      var conf = 'prod_xxxxxxxxxxxxxxxxx';
-      var width = window.innerWidth || document.documentElement.clientWidth;
-      var loadJs = function (d, a, id) {
-        var c = document.getElementsByTagName("head")[0] || document.head || document.documentElement;
-        var b = document.createElement("script");
-        b.setAttribute("type", "text/javascript");
-        b.setAttribute("charset", "UTF-8");
-        b.setAttribute("src", d);
-        if (id) {
-          b.setAttribute("id", id);
-        }
-        if (typeof a === "function") {
-          if (window.attachEvent) {
-            b.onreadystatechange = function () {
-              var e = b.readyState;
-              if (e === "loaded" || e === "complete") {
-                b.onreadystatechange = null;
-                a()
-              }
-            }
-          } else {
-            b.onload = a
-          }
-        }
-        c.appendChild(b)
-      };
-
-      loadJs("https://changyan.sohu.com/upload/changyan.js", function () {
-        window.changyan.api.config({
-          appid: appid,
-          conf: conf
-        })
-      });
-    })();
-  }
-  */
-
-</script>
-</div>
+        <div class="herofade beige-dk"></div>
     </div>
 </section>
 
+<!-- Height spacing helper -->
+<div class="heightblock"></div>
+<!-- // End height spacing helper -->
 
+<!-- ============================ END Hero Image =========================== -->
+
+
+
+
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row boxes">
+                    
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/2018/07/26/关于hashmap的一些小纠结与个人理解/">关于hashmap的一些小纠结与个人理解</a></h4>
+                            
+                            <p><time datetime="2018-07-26T02:35:09.000Z"><a href="/2018/07/26/关于hashmap的一些小纠结与个人理解/">2018-07-26</a></time></p>
+                        </div>
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/2018/06/20/浅谈为什么hashmap效率高/">浅谈为什么hashmap效率高</a></h4>
+                            
+                            <p><time datetime="2018-06-20T08:55:02.000Z"><a href="/2018/06/20/浅谈为什么hashmap效率高/">2018-06-20</a></time></p>
+                        </div>
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/2018/05/25/关于线程的生命周期/">关于线程的生命周期</a></h4>
+                            
+                            <p><time datetime="2018-05-25T08:43:53.000Z"><a href="/2018/05/25/关于线程的生命周期/">2018-05-25</a></time></p>
+                        </div>
+                    
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/2018/05/17/一次编译与到处执行/">一次编译，到处执行</a></h4>
+                            
+                            <p><time datetime="2018-05-17T09:38:09.000Z"><a href="/2018/05/17/一次编译与到处执行/">2018-05-17</a></time></p>
+                        </div>
+                    
+                        
+                            </div><div class="row boxes">
+                            
+                        
+                        
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3 wow fadeInUp" data-wow-delay="0.3s">
+                            
+                              <h4 class="title"><a href="/2018/05/15/GC问题/">GC问题</a></h4>
+                            
+                            <p><time datetime="2018-05-15T07:27:13.000Z"><a href="/2018/05/15/GC问题/">2018-05-15</a></time></p>
+                        </div>
+                    
+                </div>
+            </div>    
+        </div>
+    </div>
+</section> 
+
+<section id="statement">
+    <div class="container text-center wow fadeInUp" data-wow-delay="0.5s">
+        <div class="row">
+            <p>我已经想好了写什么，这里放不放东西都会显得很和谐。</p>
+        </div>
+    </div>
+</section>
       
 <!-- ============================ Footer =========================== -->
 
@@ -256,9 +274,8 @@
     <div class="container">
             <div class="copy">
                 <p>
-                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By John Doe. All Rights Reserved.
+                    &copy; 2014<script>new Date().getFullYear()>2010&&document.write("-"+new Date().getFullYear());</script>, Content By . All Rights Reserved.
                 </p>
-                <p>Theme By <a href="//go.kieran.top" style="color: #767D84">Kieran</a></p>
             </div>
             <div class="social">
                 <ul>
@@ -266,16 +283,10 @@
                     <li><a href="https://github.com/" title="Github" target="_blank"><i class="icon-github"></i></a>&nbsp;</li>
                     
                     
-                    <li><a href="https://twitter.com/" title="Twitter" target="_blank"><i class="icon-twitter"></i></a>&nbsp;</li>
                     
                     
-                    <li><a href="https://www.facebook.com/" title="Facebook" target="_blank"><i class="icon-facebook"></i></a>&nbsp;</li>
                     
-                    
-                    <li><a href="https://google.com/" title="Google-Plus" target="_blank"><i class="icon-google-plus"></i></a>&nbsp;</li>
-                    
-                    
-                    <li><a href="http://weibo.com/" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
+                    <li><a href="https://weibo.com/5502178609/profile?rightmod=1&wvr=6&mod=personinfo" title="Sina-Weibo" target="_blank"><i class="icon-sina-weibo"></i></a>&nbsp;</li>
                     
                 </ul>
             </div>
