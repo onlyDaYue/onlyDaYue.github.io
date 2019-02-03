@@ -18,7 +18,6 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于线程的生命周期">
 <meta name="twitter:description" content="关于线程的生命周期问题 java中线程的生命周期大概可以分为5个过程： 1.new ：当通过new关键字创建了Thread类（或者其他子类）的对象 2.Runnable:   如果thread类调用了start()方法时，那么此线程就会由new状态转化为Runnable状态。此时还没有获取到CPU,处于Runnbale状态的线程，在等待线程调度器为其分配CPU时间，也就是等待时间分片轮转到自己这里">
-<meta property="fb:app_id" content="[object Object]">
   
     <link rel="alternate" href="/atom.xml" title="Yue&#39;s blog" type="application/atom+xml">
   
@@ -102,7 +101,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/05/25/关于线程的生命周期/" data-id="cjro8gb6d000dcstzbre4pqzf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/05/25/关于线程的生命周期/" data-id="cjro9lgqq000cn8tzg2he3510" class="article-share-link">Share</a>
       
       
     </footer>
@@ -133,12 +132,21 @@
 
 
 <!-- valine版安装代码 -->
+<head>
+    ...
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    ...
+</head>
 <div id="vcomments"></div>
     <script>
         new Valine({
+            av: AV,
             el: '#vcomments',
             appId: 'b6weOjlyhw4ab86isq2rz9w7-gzGzoHsz',
-            appKey: 'VgPzxRcrPEBJLMARvo6tHQ7w'
+            appKey: 'VgPzxRcrPEBJLMARvo6tHQ7w',
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!'
+
         })
     </script>
 <!-- valine安装代码已完成 --></section>

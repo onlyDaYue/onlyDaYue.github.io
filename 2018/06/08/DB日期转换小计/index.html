@@ -19,7 +19,6 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DB日期转换小计">
 <meta name="twitter:description" content="需求： 将某Varchar类型字段显示为YYYY-MM-DD HH:MM:SS并根据另一个字段动态显示日期 月份加1操作,最后结  果显示为2018-0x-01 00:00:00 思路： 1.将表中字段类型varchar转换为Date格式,function为to_date 2.通过function为ADD_MONTHS实现月份+1操作 ​3.最后通过to_char转化为字符格式 ​ 4.通过||连">
-<meta property="fb:app_id" content="[object Object]">
   
     <link rel="alternate" href="/atom.xml" title="Yue&#39;s blog" type="application/atom+xml">
   
@@ -108,7 +107,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/08/DB日期转换小计/" data-id="cjro8gb5h0000cstzx35jyhlx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/08/DB日期转换小计/" data-id="cjro9lgq10000n8tz5z5e30er" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Oracle-Date-Varchar/">Oracle Date Varchar</a></li></ul>
@@ -141,12 +140,21 @@
 
 
 <!-- valine版安装代码 -->
+<head>
+    ...
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    ...
+</head>
 <div id="vcomments"></div>
     <script>
         new Valine({
+            av: AV,
             el: '#vcomments',
             appId: 'b6weOjlyhw4ab86isq2rz9w7-gzGzoHsz',
-            appKey: 'VgPzxRcrPEBJLMARvo6tHQ7w'
+            appKey: 'VgPzxRcrPEBJLMARvo6tHQ7w',
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!'
+
         })
     </script>
 <!-- valine安装代码已完成 --></section>

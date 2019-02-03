@@ -19,7 +19,6 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈为什么hashmap效率高">
 <meta name="twitter:description" content="基于hashmap的内部实现数据结构,可以理解为Entry(数组)+node(链表) 查询(读取)快: public final int hashCode() {     return Objects.hashCode(key) ^ Objects.hashCode(value); } 根据hashcode(key)来锁定位置,然后获取value，相当于获取index下标,取得其value,类似于">
-<meta property="fb:app_id" content="[object Object]">
   
     <link rel="alternate" href="/atom.xml" title="Yue&#39;s blog" type="application/atom+xml">
   
@@ -111,7 +110,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/20/浅谈为什么hashmap效率高/" data-id="cjro8gb6l000kcstzgz91szy1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/06/20/浅谈为什么hashmap效率高/" data-id="cjro9lgqy000jn8tzjc75b4kd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hashcode-hashtable/">hashcode hashtable</a></li></ul>
@@ -144,12 +143,21 @@
 
 
 <!-- valine版安装代码 -->
+<head>
+    ...
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    ...
+</head>
 <div id="vcomments"></div>
     <script>
         new Valine({
+            av: AV,
             el: '#vcomments',
             appId: 'b6weOjlyhw4ab86isq2rz9w7-gzGzoHsz',
-            appKey: 'VgPzxRcrPEBJLMARvo6tHQ7w'
+            appKey: 'VgPzxRcrPEBJLMARvo6tHQ7w',
+            placeholder: 'ヾﾉ≧∀≦)o来啊，快活啊!'
+
         })
     </script>
 <!-- valine安装代码已完成 --></section>
